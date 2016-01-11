@@ -6,7 +6,7 @@ A calendar to be shared between teams.
 Launch MongoDB with:
 
 ````
-docker run -p 27017:27017 --name team-cal -d mongo
+docker run -p 27017:27017 --name team-cal-db -d mongo
 mongo 192.168.99.100:27017
 ````
 
