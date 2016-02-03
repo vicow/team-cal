@@ -1,18 +1,33 @@
 # team-cal
 =======
-A calendar to be shared between team.
+A calendar to be shared between teams.
 
-## Set up
-### Database
+## Usage
+Start docker-machine:
+
+````
+docker-machine start default
+````
+
+Enable the docker-machine:
+
+````
+eval $(docker-machine env default)
+````
+
 Launch MongoDB with:
 
 ````
 docker run -p 27017:27017 --name team-cal-db --volumes-from dbdata -d mongo --storageEngine wiredTiger
 mongo 192.168.99.100:27017
 ````
-
 **Note:** Find the port with `docker ps` and the IP address with `docker-machine ip default`.
 
+Finally, start the server.
+
+
+## Set up
+### Database
 #### Data Persistence
 We use a full-container approach. The data is stored in a [data volume container](https://docs.docker.com/engine/userguide/dockervolumes/). Create a new data volume container:
 
